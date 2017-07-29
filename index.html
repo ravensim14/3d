@@ -109,6 +109,12 @@
         circle2.positionX = circle2.outerPositionX + Math.cos(circle2.angle) * circle2.outerRadius;
         circle2.positionY = circle2.outerPositionY + Math.sin(circle2.angle) * circle2.outerRadius;
 
+        var text = `Current Angle: ${circle2.angle.toFixed(2)}`;
+        var centerX = width / 2;
+        var centerY = height / 2;
+
+        context.fillText(text, centerX - 70, centerY - 30);
+
         circle2.angle += circle2.speed;
 
         circle2.update();
