@@ -80,7 +80,7 @@
       circle2.setPosition(50, 50);
       circle2.outerPositionX = width / 2;
       circle2.outerPositionY = height / 2;
-      circle2.outerRadius = 100;
+      circle2.outerRadius = 300;
       circle2.speed = 0.01;
 
       // render
@@ -109,17 +109,17 @@
         circle2.positionX = circle2.outerPositionX + Math.cos(circle2.angle) * circle2.outerRadius;
         circle2.positionY = circle2.outerPositionY + Math.sin(circle2.angle) * circle2.outerRadius;
 
-        var text = `Current Angle: ${circle2.angle.toFixed(2)} (${(circle2.angle * 180 / Math.PI).toFixed(2)})`;
+        var text = `Current Angle: ${circle2.angle.toFixed(2)} radians (${(circle2.angle * 180 / Math.PI).toFixed(2)} degrees)`;
         var centerX = width / 2;
         var centerY = height / 2;
 
-        context.fillText(text, centerX - 70, centerY - 30);
+        context.fillText(text, centerX - 150, centerY - 30);
 
         var angleInDegrees = circle2.angle * 180 / Math.PI;
 
-        text = `Current Angle: ${(angleInDegrees % 360).toFixed(2)}`;
+        text = `Current Angle: ${(angleInDegrees % 360).toFixed(2)} degrees ( deg % 360 )`;
 
-        context.fillText(text, centerX - 70, centerY + 30);
+        context.fillText(text, centerX - 150, centerY + 45);
 
         circle2.angle += circle2.speed;
 
