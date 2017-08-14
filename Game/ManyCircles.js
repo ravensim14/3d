@@ -1,5 +1,6 @@
 var ManyCircles = {
 	circles: [],
+	maxCircles: 15,
 	circle: {
 		game: null,
 		context: null,
@@ -47,8 +48,11 @@ var ManyCircles = {
 	},
 	initialize: function() {
 		this.addAndUpdateCircles();
-		setInterval(() => {
+		var intervalId = setInterval(() => {
 			this.addAndUpdateCircles();
+			if (this.circles.length > this.maxCircles) {
+				clearInterval(intervalId);
+			}
 		}, 1000);
 	},
 	update: function() {

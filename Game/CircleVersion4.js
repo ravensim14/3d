@@ -1,4 +1,5 @@
 var CircleVersion4 = {
+	maxVertices: 400,
 	vertices: [],
 	color: "#000",
 	angleX: 0,
@@ -23,7 +24,9 @@ var CircleVersion4 = {
 		this.x = this.game.centerX + Math.cos(this.angleX) * this.outerXRadius;
 		this.y = this.game.centerY + Math.sin(this.angleY) * this.outerYRadius;
 
-		this.vertices.push([this.x, this.y]);
+		if (this.vertices.length < this.maxVertices) {
+			this.vertices.push([this.x, this.y]);
+		}
 
 		this.context.fillStyle = this.color;
 		this.context.strokeStyle = this.color;

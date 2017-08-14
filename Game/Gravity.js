@@ -7,9 +7,12 @@ var Gravity = {
 		var object = Object.create(this);
 		object.game = game;
 
-		for (var i=0; i<20; i++) {
-			object.addParticle(game.centerX, game.centerY, Math.random()*5+2, Math.random()*Math.PI*2);
-		}
+		setInterval(() => {
+			object.particles = [];
+			for (var i=0; i<20; i++) {
+				object.addParticle(game.centerX, game.centerY, Math.random()*5+2, Math.random()*Math.PI*2);
+			}
+		}, 5000);
 
 		return object;
 	},
