@@ -20,8 +20,8 @@ var acceleration = Acceleration.create(game);
 var gravity = Gravity.create(game);
 var ship = Ship.create(game);
 var shipVersionTwo = ShipV2.create(game);
-var shipVersionThree = ShipV3.create(game);
 var solar = Solar.create(game);
+var shipVersionThree = ShipV3.create(game, solar.sun);
 
 game.onrender = function() {
 	this.context.clearRect(0, 0, this.width, this.height);

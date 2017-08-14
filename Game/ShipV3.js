@@ -7,9 +7,10 @@ var ShipV3 = {
 	turningLeft: false,
 	turningRight: false,
 	thrusting: false,
-	create: function(game) {
+	create: function(game, sun) {
 		var object = Object.create(this);
 
+		object.sun = sun;
 		object.game = game;
 
 		object.initialize();
@@ -54,12 +55,13 @@ var ShipV3 = {
 		this.thrust.setAngle(this.angle);
 
 		if (this.thrusting) {
-			this.thrust.setLength(0.1);
+			this.thrust.setLength(0.3);
 		} else {
 			this.thrust.setLength(0);
 		}
 
 		this.particle.accelerate(this.thrust);
+		// this.particle.gravitateTo(this.sun);
 		this.particle.update();
 
 		ctx.strokeStyle = this.stroke;
