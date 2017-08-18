@@ -1,0 +1,35 @@
+body {
+	padding: 0px;
+	margin: 0px;
+}
+canvas {
+	box-sizing: border-box;
+	display: block;
+}
+
+.menu {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	background-color: #222;
+	color: #FFF;
+	list-style: none;
+	margin: 0px;
+	padding: 1px;
+	overflow: hidden;
+}
+
+.menu li {
+	float: left;
+}
+
+.menu a {
+	color: #FFF;
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+}
+.menu a:hover {
+	background-color: #000;
+	text-decoration: underline;
+}
